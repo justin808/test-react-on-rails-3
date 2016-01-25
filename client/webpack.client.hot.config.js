@@ -24,7 +24,10 @@ config.output = {
   filename: '[name]-bundle.js',
   path: __dirname,
 };
-config.plugins.unshift(new webpack.HotModuleReplacementPlugin());
+config.plugins.unshift(
+  new webpack.HotModuleReplacementPlugin(),
+  new webpack.NoErrorsPlugin()
+);
 config.devtool = 'eval-source-map';
 
 // All the styling loaders only apply to hot-reload, not rails
